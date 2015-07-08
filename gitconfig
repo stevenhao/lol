@@ -1,0 +1,14 @@
+[user]
+	email = stevenhao@gmail.com
+	name = stevenhao
+[alias]
+	co = checkout
+	cm = commit
+	st = status
+	ci = commit
+	last = log -1 HEAD
+	unstage = reset HEAD --
+	fe = fetch
+	WIP = commit -a -m WIP
+	lg = log --graph --all --oneline --decorate
+	cp = cherry-pick
