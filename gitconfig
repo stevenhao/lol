@@ -12,3 +12,4 @@
 	WIP = commit -a -m WIP
 	lg = log --graph --all --oneline --decorate
 	cp = cherry-pick
+	rb = rebase
