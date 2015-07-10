@@ -13,3 +13,4 @@
 	lg = log --graph --all --oneline --decorate
 	cp = cherry-pick
 	rb = rebase
+	amend = commit --amend
