@@ -6,3 +6,4 @@ alias py=ipython
 alias src='source ~/.bashrc'
 alias cdc='cd -'
 alias g='git'
+alias vm='vagrant ssh'
