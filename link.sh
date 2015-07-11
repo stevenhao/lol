@@ -3,9 +3,9 @@ for target in "$@"
 do
   if [ -f ~/.$target ]
     then
-      export VERSION_CONTROL=numbered
-      echo mv -b ~/.$target old
-      mv -b ~/.$target old
+      today=`date +"%d-%m-%Y"`
+      echo mv -i ~/.$target old/.$target-$today
+      mv -i ~/.$target old/.$target-$today
   fi
 
   echo ln -s $cur/$target ~/.$target
