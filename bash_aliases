@@ -6,5 +6,5 @@ alias py=ipython
 alias src='source ~/.bashrc'
 alias cdc='cd -'
 alias g='git'
-alias vm='vagrant ssh'
+alias vm='cd ~/src/analytics && vagrant ssh'
 alias athena='ssh hsteven@mint-square.dialup.mit.edu'
