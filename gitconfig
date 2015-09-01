@@ -14,5 +14,9 @@
 	cp = cherry-pick
 	rb = rebase
 	amend = commit --amend
+	ff = merge --ff-only
 [push]
 	default = matching
+[merge]
+  defaultToUpstream = true
+  tool = vimdiff
