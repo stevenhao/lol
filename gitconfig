@@ -2,6 +2,7 @@
   email = stevenhao@gmail.com
   name = stevenhao
 [alias]
+  br = branch
   co = checkout
   st = status
   ci = commit
