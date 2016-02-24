@@ -1,17 +1,16 @@
 alias ll='ls -l'
 alias la='ll -a'
 alias l='ls -CF'
-alias bastion='ssh -A bastion.dropboxer.net'
 alias py=ipython
 alias src='source ~/.bashrc'
 alias cdc='cd -'
 alias g='git'
-alias vm='cd ~/src/analytics && vagrant ssh'
-alias athena='ssh hsteven@mint-square.dialup.mit.edu'
-alias ec2='ssh ec2-user@52.91.16.136'
-alias ec3='ssh ec2-user@52.90.192.206'
 alias scalagrep='find . -name "*[.]scala" | xargs grep 2> /dev/null'
 alias jsgrep='find . -name "*[.]js" | xargs grep 2> /dev/null'
 function c () {
     cd $1 && l;
 }
+
+if [ -f ~/.bash_aliases_local ]; then
+  . ~/.bash_aliases_local
+fi
