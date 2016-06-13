@@ -22,3 +22,5 @@
 [merge]
   defaultToUpstream = true
   tool = vimdiff
+[github]
+	user = stevenhao
