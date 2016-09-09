@@ -13,8 +13,10 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+Plugin 'AndrewRadev/sideways.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
+syntax on
 
 
 
@@ -23,7 +25,6 @@ set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
 set backupcopy=yes                                           " see :help crontab
-set clipboard=unnamed                                        " yank and paste with the system clipboard
 set directory-=.                                             " don't store swapfiles in the current directory
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
