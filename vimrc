@@ -18,6 +18,10 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 syntax on
 
+nnoremap ,<LEFT> :SidewaysLeft<cr>
+nnoremap ,<RIGHT> :SidewaysRight<cr>
+nnoremap ,y "+y
+nnoremap ,p "+p
 
 
 autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
