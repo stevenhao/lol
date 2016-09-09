@@ -1,22 +1,23 @@
-" don't bother with vi compatibility
-set nocompatible
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-" enable syntax highlighting
-syntax enable
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-" configure Vundle
-filetype on " without this vim emits a zero exit status, later, because of :ft off
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Plugin 'gmarik/vundle'
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
+call vundle#end()            " required
+filetype plugin indent on    " required
 
-" ensure ftdetect et al work by including this after the Vundle stuff
-filetype plugin indent on
+
+
 autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
