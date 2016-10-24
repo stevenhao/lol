@@ -22,3 +22,5 @@
   tool = vimdiff
 [github]
 	user = stevenhao
+[core]
+	editor = /usr/bin/vim
