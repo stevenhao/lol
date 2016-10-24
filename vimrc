@@ -9,20 +9,37 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'evanmiller/nginx-vim-syntax'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'AndrewRadev/sideways.vim'
+Plugin 'wincent/command-t'
+Plugin 'vimplugin/project.vim'
+
+
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 syntax on
-
+set splitright
 nnoremap ,<LEFT> :SidewaysLeft<cr>
+
+" keyboard shortcuts
+let mapleader = ';'
+nnoremap <leader><RIGHT> :NERDTreeFocus<CR>
+nnoremap <leader><LEFT> :NERDTreeClose<CR>
+nnoremap <silent> vv vi{
+noremap <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" in case you forgot to sudo
+
+
 nnoremap ,<RIGHT> :SidewaysRight<cr>
 nnoremap ,y "+y
 nnoremap ,p "+p
-
+nnoremap ,P "+P
+nnoremap K f{a<cr><esc>
 
 autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
 set autoindent
@@ -54,17 +71,6 @@ set mouse=a
 if exists('$TMUX')  " Support resizing in tmux
   set ttymouse=xterm2
 endif
-
-" keyboard shortcuts
-let mapleader = ','
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-nnoremap <silent> vv vi{
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-" in case you forgot to sudo
-cnoremap w!! %!sudo tee > /dev/null %
 
 " plugin settings
 let g:ctrlp_match_window = 'order:ttb,max:20'
