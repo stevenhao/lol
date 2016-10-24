@@ -8,3 +8,13 @@ fi
 if [ -f ~/.bashrc_local ]; then
   . ~/.bashrc_local
 fi
+
+function cd {
+  builtin cd "$@" && [ -d ~/.ctfd ] && pwd > ~/.ctfd/lastdir
+}
+
+function ctfd {
+  [ -d ~/.ctfd ] || echo '~/.ctfd does not exist'
+  [ -f ~/.ctfd/lastdir ] && cd $(cat ~/.ctfd/lastdir)
+}
+
