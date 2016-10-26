@@ -17,10 +17,16 @@ Plugin 'mattn/webapi-vim'
 Plugin 'AndrewRadev/sideways.vim'
 Plugin 'wincent/command-t'
 Plugin 'vimplugin/project.vim'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'derekwyatt/vim-scala'
 
 
 call vundle#end()            " required
 
+" begin steven code
+let g:jsx_ext_required = 0 " jsx on .js files as well
 filetype plugin indent on    " required
 syntax on
 set splitright
@@ -28,10 +34,15 @@ nnoremap ,<LEFT> :SidewaysLeft<cr>
 
 " keyboard shortcuts
 let mapleader = ';'
-nnoremap <leader><RIGHT> :NERDTreeFocus<CR>
-nnoremap <leader><LEFT> :NERDTreeClose<CR>
-nnoremap <silent> vv vi{
+nnoremap <leader>/ /<C-R>"<CR>
+nnoremap <S-Down> <C-W><C-J>
+nnoremap <S-Up> <C-W><C-K>
+nnoremap <S-Left> <C-W><C-H>
+nnoremap <S-Right> <C-W><C-L>
+nnoremap <silent> <leader><RIGHT> :NERDTreeFocus<CR>
+nnoremap <silent> <leader><LEFT> :NERDTreeClose<CR>
 noremap <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+noremap <silent> <leader>z :ZoomWin<CR>
 " in case you forgot to sudo
 
 
@@ -41,7 +52,11 @@ nnoremap ,p "+p
 nnoremap ,P "+P
 nnoremap K f{a<cr><esc>
 
-autocmd FileType python setlocal expandtab shiftwidth=2 softtabstop=2
+autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+
+" end steven code
+
+
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
