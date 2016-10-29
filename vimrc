@@ -35,12 +35,10 @@ nnoremap ,<LEFT> :SidewaysLeft<cr>
 " keyboard shortcuts
 let mapleader = ';'
 nnoremap <leader>/ /<C-R>"<CR>
-nnoremap <S-Down> <C-W><C-J>
-nnoremap <S-Up> <C-W><C-K>
-nnoremap <S-Left> <C-W><C-H>
-nnoremap <S-Right> <C-W><C-L>
-nnoremap <silent> <leader><RIGHT> :NERDTreeFocus<CR>
-nnoremap <silent> <leader><LEFT> :NERDTreeClose<CR>
+nnoremap <silent> <leader><DOWN> :NERDTreeFocus<CR>
+nnoremap <silent> <leader><UP> :NERDTreeClose<CR>
+nnoremap <silent> <leader><LEFT> <C-W><C-H>
+nnoremap <silent> <leader><RIGHT> <C-W><C-L>
 noremap <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 noremap <silent> <leader>z :ZoomWin<CR>
 " in case you forgot to sudo
