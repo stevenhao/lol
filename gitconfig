@@ -24,3 +24,4 @@
 	user = stevenhao
 [core]
 	editor = /usr/bin/vim
+  pager = less -XRF
