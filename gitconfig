@@ -8,7 +8,8 @@
   ci = commit
   fe = fetch
   WIP = commit -a -m WIP
-  lg = log --graph --all --oneline --decorate
+  lg = log --graph --oneline --decorate
+  lag = log --all --graph --oneline --decorate
   cp = cherry-pick
   rb = rebase
   amend = commit --amend
