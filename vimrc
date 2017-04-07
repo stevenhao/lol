@@ -21,6 +21,12 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'hail2u/vim-css3-syntax.git'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'vim-scripts/SQLUtilities'
+Plugin 'vim-scripts/Align'
+
 
 
 call vundle#end()            " required
@@ -45,9 +51,11 @@ noremap <silent> <leader>z :ZoomWin<CR>
 
 
 nnoremap ,<RIGHT> :SidewaysRight<cr>
-nnoremap ,y "+y
-nnoremap ,p "+p
-nnoremap ,P "+P
+map ,y "+y
+map ,p "+p
+map ,P "+P
+vnoremap <silent> <leader> :SQLUFormatter<CR>
+nnoremap <silent> <leader> V:SQLUFormatter<CR>
 nnoremap K f{a<cr><esc>
 
 autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
