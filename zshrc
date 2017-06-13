@@ -7,7 +7,7 @@ export ZSH=/Users/stevenhao/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="simple"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,8 +51,16 @@ ZSH_THEME="random"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-completions)
+ZSH_THEME_RANDOM_CANDIDATES=( simple )
 
+if [ "${(t)ZSH_THEME_RANDOM_CANDIDATES}" = "array" ] && [ "${#ZSH_THEME_RANDOM_CANDIDATES[@]}" -gt 0 ]; then
+  themes=(${^ZSH_THEME_RANDOM_CANDIDATES})
+  N=${#themes[@]}
+  ((N=(RANDOM%N)+1))
+  ZSH_THEME=${themes[$N]}
+  echo $ZSH_THEME
+fi
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -107,3 +115,11 @@ function ctfd {
 if [ -f ~/.scripts/z.sh ]; then
   . ~/.scripts/z.sh
 fi
+
+export NVM_DIR="/Users/stevenhao/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/Users/stevenhao/miniconda3/bin:$PATH"
+eval $(thefuck --alias)
+
+BASE_PROMPT=$PROMPT
+

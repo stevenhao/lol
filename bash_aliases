@@ -1,3 +1,4 @@
+alias g+++='g++ -std=c++11'
 alias ll='ls -l'
 alias la='ll -a'
 alias l='ls -CF'

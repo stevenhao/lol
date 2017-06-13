@@ -1,3 +1,4 @@
+alias g+++='g++ -std=c++11'
 alias ll='ls -l'
 alias la='ll -a'
 alias l='ls -CF'
@@ -9,14 +10,28 @@ alias scalagrep='find . -name "*[.]scala" | xargs grep 2> /dev/null'
 alias jsgrep='find . -name "*[.]js" | xargs grep 2> /dev/null'
 alias agl='ag -G .jl'
 alias myip='ipconfig getifaddr en0'
-alias gg='giphycat rekt'
 
 function c () {
     cd $1 && l;
 }
 
-alias mklatex='latexmk -pdf -pvc -interaction=nonstopmode'
-if [ -f ~/.bash_aliases_local ]; then
+function submit () { # contest stuff
+    cp $1 ~/Desktop/${PWD##*/}_$1;
+}
 
-  . ~/.bash_aliases_local
+alias mklatex='latexmk -pdf -pvc -interaction=nonstopmode'
+if [ -f ~/.zsh_aliases_local ]; then
+
+  . ~/.zsh_aliases_local
 fi
+
+ENV_DIR=~/envs
+function useenv () {
+  if [ -f $ENV_DIR/$1 ]; then
+    echo "activating $ENV_DIR/$1..."
+    source $ENV_DIR/$1
+    PROMPT="%{$fg[magenta]%}[$1]%{$reset_color%} $BASE_PROMPT"
+  else
+    echo could not find env file $ENV_DIR/$1
+  fi
+}

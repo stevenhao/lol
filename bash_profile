@@ -10,3 +10,6 @@ function tabname {
 function winname {
   printf "\e]2;$1\a"
 }
+
+# added by Miniconda3 4.2.12 installer
+export PATH="/Users/stevenhao/miniconda3/bin:$PATH"

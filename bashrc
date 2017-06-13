@@ -18,3 +18,4 @@ function ctfd {
   [ -f ~/.ctfd/lastdir ] && cd $(cat ~/.ctfd/lastdir)
 }
 
+export PATH='/home/scratch/stevenhao/anaconda3/bin':$PATH
