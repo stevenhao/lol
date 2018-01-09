@@ -30,6 +30,9 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mhinz/vim-signify'
+
 
 
 call vundle#end()            " required
@@ -47,6 +50,8 @@ map # <plug>NERDCommenterToggle
 nnoremap <leader>/ /<C-R>"<CR>
 nnoremap <leader>r :YcmCompleter RestartServer<CR>
 nnoremap <leader><CR> :YcmCompleter GoToDefinition<CR>
+nnoremap C <C-I>
+nnoremap R <C-O>
 nnoremap <silent> <leader><DOWN> :NERDTreeFocus<CR>
 nnoremap <silent> <leader><UP> :NERDTreeClose<CR>
 nnoremap <silent> <leader><LEFT> <C-W><C-H>
@@ -154,3 +159,4 @@ if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
 map ff mzgg=G`z
+colorscheme peachpuff
