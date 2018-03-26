@@ -35,3 +35,6 @@ function useenv () {
     echo could not find env file $ENV_DIR/$1
   fi
 }
+
+alias srm='rm /var/tmp/*.swp'
+alias github='echo http://github.com/scaleapi/scaleapi'
