@@ -33,8 +33,12 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 
-
+let g:syntastic_javascript_checkers = ['eslint']
 
 call vundle#end()            " required
 " begin steven code
@@ -55,6 +59,7 @@ nnoremap C <C-I>
 nnoremap R <C-O>
 nnoremap <silent> <leader><DOWN> :NERDTreeFocus<CR>
 nnoremap <silent> <leader><UP> :NERDTreeClose<CR>
+map <leader>f :NERDTreeFind<cr>
 nnoremap <silent> <leader><LEFT> <C-W><C-H>
 nnoremap <silent> <leader><RIGHT> <C-W><C-L>
 noremap <silent> <leader>v :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -95,7 +100,10 @@ set showcmd
 set smartcase                                                " case-sensitive search if any caps
 set softtabstop=2                                            " insert mode tab and backspace use 2 spaces
 set tabstop=2                                                " actual tabs occupy 8 characters
-set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+set wildignore=log/**,node_modules/**,target/**,tmp/**,*.rbc,client/**
 set wildmenu                                                 " show a navigable menu for tab completion
 set wildmode=longest,list,full
 
