@@ -2,7 +2,7 @@
   email = stevenhao@gmail.com
   name = stevenhao
 [alias]
-  br = branch --sort=committerdate
+  br = !git --no-pager branch --sort=committerdate
   co = checkout
   st = status
   ci = commit
@@ -16,9 +16,13 @@
   ff = merge --ff-only
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   ignore = "!f() { echo $1 >> $(git rev-parse --show-toplevel)/.git/info/exclude; git update-index --assume-unchanged; }; f"
+  uu = "!f() { echo $1 >> $(git rev-parse --show-toplevel)/.git/info/exclude; git update-index --assume-unchanged; }; f"
+  u = !git branch -u origin/$(git branch | grep \\* | cut -d ' ' -f2)
+  pu = !git push origin $(git branch | grep \\* | cut -d ' ' -f2)
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
   d = diff
   dc = diff --cached
+  ; u = "!f() { git branch -u origin $(git branch | grep \* | cut -d ' ' -f2) }; f"
 [push]
   default = matching
 [merge]
