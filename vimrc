@@ -1,6 +1,6 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+set cindent cinoptions+=j1
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -26,7 +26,6 @@ Plugin 'hail2u/vim-css3-syntax.git'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-scripts/SQLUtilities'
 Plugin 'vim-scripts/Align'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'scrooloose/nerdcommenter'
@@ -37,9 +36,14 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'mtscout6/syntastic-local-eslint.vim'
+Plugin 'https://github.com/rhysd/vim-fixjson'
+Plugin 'prettier/vim-prettier'
 
+let g:syntastic_cpp_compiler = 'g++-9'
+let g:syntastic_cpp_compiler_options = '-std=c++14 -Wall'
 let g:syntastic_javascript_checkers = ['eslint']
-
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']
 call vundle#end()            " required
 " begin steven code
 let g:jsx_ext_required = 0 " jsx on .js files as well
@@ -51,8 +55,8 @@ nnoremap ,<LEFT> :SidewaysLeft<cr>
 " keyboard shortcuts
 let mapleader = ';'
 nnoremap <leader>/ /<C-R>"<CR>
+nnoremap <leader>; :tabn<CR>
 map # <plug>NERDCommenterToggle
-nnoremap <leader>/ /<C-R>"<CR>
 nnoremap <leader>r :YcmCompleter RestartServer<CR>
 nnoremap <leader><CR> :YcmCompleter GoToDefinition<CR>
 nnoremap C <C-I>
