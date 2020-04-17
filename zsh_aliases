@@ -10,7 +10,7 @@ alias scalagrep='find . -name "*[.]scala" | xargs grep 2> /dev/null'
 alias jsgrep='find . -name "*[.]js" | xargs grep 2> /dev/null'
 alias agl='ag -G .jl'
 alias myip='ipconfig getifaddr en0'
-
+alias gpr='hub push origin `git rev-parse --abbrev-ref HEAD` && hub pull-request'
 function c () {
     cd $1 && l;
 }
@@ -20,11 +20,6 @@ function submit () { # contest stuff
 }
 
 alias mklatex='latexmk -pdf -pvc -interaction=nonstopmode'
-if [ -f ~/.zsh_aliases_local ]; then
-
-  . ~/.zsh_aliases_local
-fi
-
 ENV_DIR=~/envs
 function useenv () {
   if [ -f $ENV_DIR/$1 ]; then
@@ -37,4 +32,12 @@ function useenv () {
 }
 
 alias srm='rm /var/tmp/*.swp'
-alias github='echo http://github.com/scaleapi/scaleapi'
+alias python="python3"
+alias pip="pip3"
+alias ggg="g++-9 -DSTEVEN -std=c++17 -O2 -o main -Wall"
+alias ggc="g++-9 -std=c++17 -O2 -o main -Wall"
+alias gg="g++-9 -DSTEVEN -Wall -Wextra -pedantic -std=c++11 -O2 -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -fsanitize=address -fsanitize=undefined -fno-sanitize-recover -fstack-protector -o main"
+if [ -f ~/.zsh_aliases_local ]; then
+
+  . ~/.zsh_aliases_local
+fi
