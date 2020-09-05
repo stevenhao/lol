@@ -116,9 +116,5 @@ if [ -f ~/.scripts/z.sh ]; then
   . ~/.scripts/z.sh
 fi
 
-export NVM_DIR="/Users/stevenhao/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="/Users/stevenhao/miniconda3/bin:$PATH"
-
 BASE_PROMPT=$PROMPT
 
